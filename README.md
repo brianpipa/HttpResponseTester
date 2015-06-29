@@ -22,6 +22,6 @@ To access it, use http://SERVER:PORT/responsetester?responsename=NAME where name
 * json - a JSON response: http://SERVER:PORT/responsetester?responsename=json
 * test - plain text from a file: http://SERVER:PORT/responsetester?responsename=test
 
-** Ideas for enhancement:**
+**Ideas for enhancement:**
 * add in the ability to deny GET OR POST (or both?)
 * support other params and even HTTP headers (like *header.required=X-Auth-Token*)
