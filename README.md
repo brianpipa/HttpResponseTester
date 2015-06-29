@@ -7,7 +7,7 @@ Example uses:
 
 The latest version of HTTPResponseTester can always be retrieved from http://github.com/brianpipa/HTTPResponseTester
 
-To build, just run ant i nthe root - this will produce dist/responsetester.war
+To build, just run ant in the root - this will produce dist/responsetester.war
 
 To use it, drop the responsetester.war into any servlet engine (like Tomcat) and access it via http://SERVER:PORT/responsetester
 
@@ -16,7 +16,7 @@ To configure it, edit the responsetester/response.properties file and add an ent
 To access it, use http://SERVER:PORT/responsetester?responsename=NAME where name is the name you used in the properties file. Valid sample urls are:
 * help - this help file: http://SERVER:PORT/responsetester?responsename=help
 * 404 - a fake 404 error: http://SERVER:PORT/responsetester?responsename=404
-* >503 - a fake 503 error: http://SERVER:PORT/responsetester?responsename=503
+* 503 - a fake 503 error: http://SERVER:PORT/responsetester?responsename=503
 * delayed - waits 10 seconds before responding: http://SERVER:PORT/responsetester?responsename=delayed
 * html - an HTML response: http://SERVER:PORT/responsetester?responsename=html
 * json - a JSON response: http://SERVER:PORT/responsetester?responsename=json
