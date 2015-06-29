@@ -1,0 +1,58 @@
+<?xml version = '1.0'?> 
+<project name="ResponseTester" default="war" basedir=".">
+	<description>
+		creates the responsetester
+	</description>
+	<!-- set global properties for this build -->
+	
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="dist"  location="dist"/>
+	<tstamp prefix="build-info">
+	    <format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
+	    <format property="current-time" pattern="hh:mm:ss a z" locale="en" />
+	</tstamp>
+	       
+	<path id="compile.classpath">
+		<fileset dir="lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/classes"/>
+		<mkdir dir="${dist}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source " >
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}/classes" debug="true">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+
+	<target name="war" depends="compile">
+        <war destfile="${dist}/responsetester.war" webxml="WEB-INF/web.xml">
+            <fileset dir="props">
+              <include name="response.properties"/>
+            </fileset>
+        	<zipfileset dir="." includes="responses/**"/>
+            <classes dir="build/classes"/>
+                <manifest>              	
+                    <attribute name="Build-Date" value="${build-info.current-date}" />
+                    <attribute name="Built-Time" value="${build-info.current-time}" />
+                </manifest>         
+        </war>
+	</target>
+
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+	</target>	
+    
+</project>

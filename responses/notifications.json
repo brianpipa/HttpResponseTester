@@ -1,0 +1,25 @@
+{
+  "status": "SUCCESS",
+  "messages": {
+    "message": "message here if needed"
+  },
+  "content": [
+    {
+      "id": 1,
+      "type": "TA",
+      "details": "Some details here",
+      "assignerName": "Amy Admin",
+      "hasTask": false,
+      "relatedCase": 98765
+    },
+    {
+      "id": 1,
+      "type": "TA",
+      "details": "details here",
+      "assignerName": "Susie Smith",
+      "hasTask": true,
+      "relatedCase": 789
+    }
+  ],
+  "links": []
+}
