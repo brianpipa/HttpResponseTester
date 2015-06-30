@@ -25,4 +25,4 @@ To access it, use http://SERVER:PORT/responsetester?responsename=NAME where name
 **Ideas for enhancement:**
 * add in the ability to deny GET OR POST (or both?)
 * support other params and even HTTP headers (like *header.required=X-Auth-Token*)
-* Allow configuration in-app, rather than editing the properties file by hand. Maybe there is an open source properties file editor (JSP/servlet?) that we could leverage?
+* Allow configuration in-app, rather than editing the properties file by hand. Maybe there is an open source (properties) file editor (JSP/servlet?) that we could leverage?
